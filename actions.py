@@ -8,6 +8,7 @@ import fn.xpathv as xp
 import fn.log as lg
 from selenium.common.exceptions import NoSuchElementException
 import re
+import traceback
 
 
 class actions(unittest.TestCase):
@@ -102,14 +103,17 @@ class actions(unittest.TestCase):
     # screenshot (str) - 'y' if screen shot should be taken
     def click(xpathkey, fullxpath, step_name, screenshot):
         try:
-            xpathv_f = xp.copmplete_xpath(xpathkey, fullxpath)
-            #WebDriverWait(driver, 3).until(EC.presence_of_element_located((By.XPATH, xpathv_f)))
-            driver.find_element_by_xpath(xpathv_f).click()
+            xpathv_f = xp.copmplete_xpath(xpathkey, fullxpath) #Get xpath
+            element= driver.find_element_by_xpath(xpathv_f) #Locate an element
+            #Click
+            element.click()
             #Create output
             lg.log.add_step(step_name, screenshot)
         except NoSuchElementException:
-            print ("Element not found and test failed")
+            lg.log.exception_handle(xpathv_f, step_name)
+            # process the var as you want, then re raise the error
             driver.quit()
+            raise
 
 
 

@@ -1,0 +1,96 @@
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  <title>
+   Test Output: cart01
+  </title>
+  <style>
+   .col-sm-1 {background-color: #dee2e2; color: #303131; font-size: 26px; text-align: center; width: 40px; height: 40px;
+        margin-left: 20px; box-sizing: content-box; border: solid #20a19a 7px}
+        .col-sm-9 { color: #303131; font-size: 21px; text-align: left; height: 40px; padding: 9px}
+        .row {padding: 20px;}
+        img{width: 80%; height: 80%; margin: 20px;}
+        .failed_traceback, failed_xpath {color: #303131; font-size: 16px; text-align: left; margin-left: 10%;}
+        #test_status, #failed_xpath {padding-left: 10%; font-size: 18px; background-color: #de4343;}
+  </style>
+ </head>
+ <body style="background: linear-gradient(110deg, #dee2e2 60%, #ffffff 60% );">
+  <nav class="navbar navbar-inverse" style=" ">
+   <div class="container-fluid">
+    <div class="navbar-header" style="background-image: linear-gradient(#26DCF5, #20a19a); width: 7%;">
+     <p class="navbar-brand" style="color: black; margin: 0 5% 0 5%">
+      cart01
+     </p>
+    </div>
+    <div style="padding-top: 0.5%;color: #20a19a; font-size: 21px;text-align: center;">
+     Description: Search for item and add it to the cart. Verify price.
+    </div>
+   </div>
+  </nav>
+  <dev class="container-fluid" id="row0" style="margin: 0.5% 5% 0.5% 5%; font-size: 18px;">
+  </dev>
+  <dev class="row" id="row1">
+   <div class="col-sm-1 step1" id="number 1" style="border: solid #20a19a 7px">
+    1
+   </div>
+   <div class="col-sm-9" id="step_description 1">
+    Verify car badge shows 0 items added
+   </div>
+   <br/>
+   <br/>
+   <p id="assertex 1" style="margin-left: 10%; margin-top: 10px;">
+    Expected value: 0
+   </p>
+   <p id="assertac1" style="margin-left: 10%;">
+    Actual value: 0
+   </p>
+  </dev>
+  <dev class="row" id="row2">
+   <div class="col-sm-1 step2" id="number 2">
+    2
+   </div>
+   <div class="col-sm-9" id="step_description 2">
+    Search for an item chuckit flying squirrel
+   </div>
+   <img src="/Users/natallia/PycharmProjects/mod/tstlog/Search_for_an_item_chuckit_flying_squirrel.png"/>
+  </dev>
+  <dev class="row" id="row3">
+   <div class="col-sm-1 step3" id="number 3">
+    3
+   </div>
+   <div class="col-sm-9" id="step_description 3">
+    Click on Search icon
+   </div>
+  </dev>
+  <dev class="row" id="row4">
+   <div class="col-sm-1 step4" id="number 4">
+    4
+   </div>
+   <div class="col-sm-9" id="step_description 4">
+    test exception
+   </div>
+   <img id="fail" src="/Users/natallia/PycharmProjects/mod/tstlog/test_exception.png"/>
+   <p id="test_status">
+    TEST FAILED
+   </p>
+   <p id="failed_xpath">
+    Failed XPATH: //input[@name='testtest']
+   </p>
+   <p class="failed_traceback" id="failed_traceback0">
+    File "/Users/natallia/PycharmProjects/mod/cart01.py", line 27, in &lt;module&gt;
+    fns.actions.click("test", "", "test exception", "") #fail test, throw exception
+   </p>
+   <p class="failed_traceback" id="failed_traceback1">
+    File "/Users/natallia/PycharmProjects/mod/fn/actions.py", line 113, in click
+    lg.log.exception_handle(xpathv_f, step_name)
+   </p>
+   <p class="failed_traceback" id="failed_traceback2">
+    File "/Users/natallia/PycharmProjects/mod/fn/log.py", line 233, in exception_handle
+    trvar = traceback.extract_stack(None, 20)
+   </p>
+   <br/>
+  </dev>
+ </body>
+</html>
